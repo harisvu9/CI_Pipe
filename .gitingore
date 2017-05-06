@@ -1,5 +1,5 @@
 # Ignore terraform secret key var file
-*.tfvar
+*.tfvars
 
 # terraform state file
 *.tfstate
