@@ -1,7 +1,7 @@
-variable aws_region { default = 'us-west-2' }
-# variable access_key { default = ''}
-# variable secret_key { drfault = ''}
-
+variable "aws_region"  { default = "us-west-2" }
+variable access_key {}
+variable secret_key {}
+variable "environment" { default = "dev" }
 provider "aws" {
     region  = "${var.aws_region}"
     access_key = "${var.access_key}"
