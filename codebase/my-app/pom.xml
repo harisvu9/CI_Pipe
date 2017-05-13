@@ -11,8 +11,33 @@
   <properties>
       <!-- This property will be set by the Maven Dependency plugin -->
       <annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
+      <sonar.sources>src/main/java</sonar.sources>
+      <sonar.tests>src/test/java</sonar.tests>
+      <sonar.binaries>target/test-classes,target/classes</sonar.binaries>
+      <timestamp>${maven.build.timestamp}</timestamp>
+      <maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
+      <sonar.language>java</sonar.language>
+      <sonar.dynamicAnalysis>true</sonar.dynamicAnalysis>
   </properties>
+  <profiles>
+    <profile>
+                <id>SampleJAVA</id>
+                <activation>
+                <activeByDefault>true</activeByDefault>
+                </activation>
+                <properties>
+                <sonar.login>admin</sonar.login>
+                <sonar.password>admin</sonar.password>
+                <!-- Example for MySQL-->
+                <sonar.jdbc.url>jdbc:jtds:sqlserver://52.37.0.211:9000;databaseName=SONAR;selectMethod=cursor;</sonar.jdbc.url>
+                <sonar.jdbc.username>admin</sonar.jdbc.username>
+                <sonar.jdbc.password>admin</sonar.jdbc.password>
 
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>http://52.37.0.211:9000</sonar.host.url>
+                </properties>
+</profile>
+  </profiles>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
