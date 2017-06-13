@@ -2,7 +2,8 @@
     "files": [
         {
             "pattern": "codebase/my-app/target/*.jar",
-            "target": "example-repo-local/felxplm_a"
+            "target": "example-repo-local/felxplm_a/jar/",
+            "props": "type=jar;status=readytouse"
         }
     ]
 }
